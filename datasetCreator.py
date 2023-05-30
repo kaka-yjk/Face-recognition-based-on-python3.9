@@ -3,13 +3,13 @@ import cv2
 import sqlite3
 
 # Describe: 采集人脸样本脚本
-# Author  : 江依鹏
+
 
 
 # 导入openCV自带的人脸检测配置文件
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml');
 # 启动电脑的摄像头
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1)
 
 
 def insertOrUpdate(id, name, age):
@@ -23,16 +23,21 @@ def insertOrUpdate(id, name, age):
         cmd = "UPDATE people SET name=" + str(name) + ",age=" + str(age) + " WHERE id = " + str(id)
     else:
         cmd = "INSERT INTO people (id, name, age) VALUES (" + id + "," + str(name) + "," + age + ")"
-    print cmd
+    print(cmd)
+
+    #print('运行cmd指令：{}'.format(cmd))
     conn.execute(cmd)
     conn.commit()
     conn.close()
 
 
 # 待采集的人脸对应的编号
-id = raw_input('Enter user id: ')
-name = raw_input('Enter user name: ')
-age = raw_input('Enter user age: ')
+#id = raw_input('Enter user id: ')
+id = input('Enter user id: ')
+name = input('Enter user name: ')
+#name = raw_input('Enter user name: ')
+#age = raw_input('Enter user age: ')
+age = input('Enter user age: ')
 insertOrUpdate(id, name, age)
 # 人脸样本编号
 sampleNum = 0;

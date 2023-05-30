@@ -1,9 +1,9 @@
 ## 人脸识别
 ### 实验环境
-- python 2.7
-- numpy 1.12.1
-- Pillow 4.1.1
-- openCV 2.4.13
+- python 3.9
+- numpy 1.24.2
+- Pillow 9.5.0
+- openCV 4.7.0.72(包括opencv-contri-python和opencv-python)
 
 人脸识别程序主要分为三个部分：
 1. 创建一个dataset：datasetCreator.py
@@ -11,7 +11,7 @@
 3. 检测器：detector.py
 
 ### dataset
-通过摄像头每隔0.1s检测一次人脸，并将检测到的人脸储存至dataSet路径下(如果没有，需要自己创建)
+通过摄像头每隔0.1s检测一次人脸，并将检测到的人脸储存至dataSet路径下(如果没有，需要自己创建一个文件夹在项目文件下)
 
 ### trainner
 使用openCV自带的LBP人脸特征值提取方法对dataSet路径下的所有人脸进行识别训练
@@ -32,3 +32,4 @@
 
 ## reference
 本项目参考自youtube:[OpenCV and Python Tutorial](https://www.youtube.com/watch?v=1Jz24sVsLE4&list=PLnjEM1fs09cGGjdCLSue8Kw7GmWDhGlMh)
+以及github：https://github.com/ggjyp/face_recognition

@@ -3,12 +3,13 @@ import os
 import cv2
 import numpy as np
 from PIL import Image
+
 # Describe: 训练识别器
-# Author  : 江依鹏
+
 
 
 # 创建LBP人脸识别器
-recognizer = cv2.createLBPHFaceRecognizer();
+recognizer = cv2.face.LBPHFaceRecognizer_create()
 path = 'dataSet'
 
 # 遍历数据集
